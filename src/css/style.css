@@ -1,0 +1,152 @@
+:root{
+    --primary-color: hsl(179, 62%, 43%);
+    --detalhe: hsl(71, 73%, 54%);
+    --fundo: hsl(204, 43%, 93%);
+    --fundo-neutro: hsl(218, 22%, 67%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+}
+
+body{
+    background-color: var(--fundo);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.join{
+    grid-area: join;
+    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.price{
+    grid-area: price;
+    background-color: var(--fundo-neutro);
+    border-bottom-left-radius: 10px;
+}
+
+.why{
+    grid-area: why;
+    background-color: var(--primary-color);
+    border-bottom-right-radius: 10px;
+}
+
+.container {
+    display: grid;
+    grid: 
+    "join join" 200px
+    "price why" 300px
+    / 350px 350px;
+}
+
+.espacamento {
+    padding: 40px;
+}
+
+h1{
+    font-size: 20px;
+    color: var(--primary-color);
+    padding-bottom: 20px;
+}
+
+span{
+    color: var(--detalhe);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.p-join{
+    color: var(--primary-color);
+    padding-top: 10px;
+}
+
+h2{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.coin{
+    display: flex;
+    gap: 10px;
+}
+
+.value{
+    font-size: 30px;
+    color: #fff;
+}
+
+.value-month{
+    color: var(--fundo);
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.price p{
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+button{
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--detalhe);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid var(--primary-color);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.why p{
+    color: #fff;
+    padding: 3px;
+    font-size: 14px;
+}
+
+@media (max-width: 760px) {
+
+    .container {
+        grid-template-columns: 75%;
+        grid-template-areas: 
+        "join"
+        "price"
+        "why";
+    }
+
+    .price{
+        border-bottom-left-radius: 0px;
+    }
+
+    .why{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .join, .price, .why{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .espacamento{
+        padding: 20px;
+    }
+}
